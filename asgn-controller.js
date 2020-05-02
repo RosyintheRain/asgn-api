@@ -9,7 +9,7 @@ exports.index = function (req, res) {
         res.json({
             status: "Succss",
             message: "Assignments retrieved!",
-            data: contacts
+            data: courses
         })
     })
 }
