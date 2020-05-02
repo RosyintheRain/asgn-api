@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var classSchema = mongoose.Schema({
+var courseSchema = mongoose.Schema({
     courseName: String,
     assignmentName: {
         type: String,
@@ -8,3 +8,9 @@ var classSchema = mongoose.Schema({
     },
     dueDate: Date
 })
+
+var Course = module.exports = mongoose.model('course', courseSchema);
+
+module.exports.get = function (callback, limit) {
+    Course.find(callback).limit(limit);
+}
